@@ -1,0 +1,14 @@
+.live-badge {
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: opacity 0.2s;
+    margin-right: 8px;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}

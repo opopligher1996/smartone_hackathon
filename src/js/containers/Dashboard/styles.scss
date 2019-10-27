@@ -1,0 +1,48 @@
+.dashboard {
+  height: 100vh;
+  overflow: hidden;
+
+  .minibus-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .minibus-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .minibus-license {
+    background-color: white;
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+  .minibus-cards-container {
+    overflow: scroll;
+    height: 100%;
+  }
+
+  .info-container {
+    height: 100%;
+  }
+
+  .filters-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .detail-container {
+    width: 100%;
+  }
+
+  .journeySet-table-container {
+    width: 100%;
+    overflow: scroll;
+  }
+
+  .search-bar-container {
+    .search-bar {
+      width: 100%;
+    }
+  }
+}

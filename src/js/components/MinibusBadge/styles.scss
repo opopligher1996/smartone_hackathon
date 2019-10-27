@@ -1,0 +1,14 @@
+.minibus-badge {
+  .minibus-icon {
+    width: 100%;
+    height: auto;
+  }
+
+  .license-plate {
+    width: 100%;
+    padding: 4px 8px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -1,0 +1,30 @@
+.tool-container {
+  .map {
+    position: relative;
+    height: 600px;
+    width: 1000px;
+
+    .point {
+      width: 8px;
+      height: 8px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .info-box {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      width: 150px;
+      height: 200px;
+      background-color: white;
+    }
+  }
+}
+
+
+
+.stop-name-field{
+  width:20%
+}
