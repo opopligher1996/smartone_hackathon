@@ -27,16 +27,16 @@ class BusStopCard extends Component {
             <Col md={9}>
               <BusStopLiveBadge busStop={busStop} />
               <Typography variant="body1">
-                {`人數: ${peopleNumber}`}
+                {`Number of Passengers: ${peopleNumber}`}
               </Typography>
               <Typography variant="body1">
-                {`溫度: ${temperature}`}
+                {`Temperature : ${temperature}`}
               </Typography>
               <Typography variant="body1">
                 {`Co2: 10`}
               </Typography>
               <Typography variant="body2" component="p">
-                {`PM 2.5 濃度： 5.0`}
+                {`PM 2.5： 5.0`}
               </Typography>
             </Col>
           </Row>

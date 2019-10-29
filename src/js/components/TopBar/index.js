@@ -24,9 +24,9 @@ class TopBar extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#dashboard">儀表板</Nav.Link>
-            <Nav.Link href="#busStopReport">記錄</Nav.Link>
-            <Nav.Link href="#customerStopReport">乘客記錄</Nav.Link>
+            <Nav.Link href="#dashboard">Dashboard</Nav.Link>
+            <Nav.Link href="#busStopReport">Record</Nav.Link>
+            <Nav.Link href="#customerStopReport">User Journey</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

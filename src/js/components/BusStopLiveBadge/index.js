@@ -44,7 +44,7 @@ class BusStopLiveBadge extends Component {
          <div className='container'>
             <div className='dot' style={badgeStyle}></div>
             <Typography variant="body1">
-              { fullLevel=='1' ? '人流稀少':'擠逼' }
+              { fullLevel=='1' ? 'Not Crowded':'Crowded' }
             </Typography>
           </div>
         </div>

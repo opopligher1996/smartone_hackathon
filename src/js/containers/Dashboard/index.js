@@ -44,10 +44,7 @@ class Dashboard extends Component {
 
   componentDidMount() {
     this.checkRole()
-    this.getLicenseIDPair()
-    this.interval = setInterval(() => {
-      this.getAllMinibus()
-    }, 5000);
+    this.getBusStop()
   }
 
   checkRole = () => {
@@ -56,33 +53,7 @@ class Dashboard extends Component {
     !user?this.props.history.push('/login'):null
   }
 
-  getLicenseIDPair = async () => {
-    let url = 'http://minibus-user-api.socif.co/api/v3/data/getLicenseIDPair'
-    const results = await fetch(url).then(res => res.json());
-    const licenseIDPair = results.response.payload;
-    this.setState({ licenseIDPair });
-  }
-
-  getAllMinibus = async () => {
-    const { licenseIDPair } = this.state;
-    let url = 'http://minibus-api.socif.co/api/v2/minibus/getAllMinibuses?showAll=true';
-    const results = await fetch(url).then(res => res.json());
-    var minibuses = results.response.map(minibus => {
-      minibus.batteryLeft = minibus.license.match(/420/g)?minibus.batteryLeft:100
-      minibus.hardwareId = minibus.license
-      const selectedPair = licenseIDPair.find(pair => pair.hardwareId == minibus.hardwareId)
-      if(selectedPair)
-        minibus.license = selectedPair.license
-
-      if(minibus.hardwareId == "4209199839")
-        minibus.license = "2952"
-
-      return minibus
-    })
-    minibuses = this.reverMinibusesSeq(minibuses, "11M")
-    this.setState({ minibuses });
-
-
+  getBusStop = async () => {
     const busStopRecords = [
           {
             'id':0,
@@ -111,7 +82,7 @@ class Dashboard extends Component {
             'name':'清水灣龍窩村',
             'temperature':29,
             'peopleNumber':10,
-            'fullLevel':2,
+            'fullLevel':1,
             'location':{
               'lat':22.333301,
               'lng':114.234829
@@ -163,12 +134,6 @@ class Dashboard extends Component {
           }
         ]
     this.setState({busStops:busStopRecords})
-  }
-
-  getRecord = async (journeyId) => {
-    const results = await fetch(`http://minibus-api.socif.co/api/v2/record/getRecord?journeyId=${journeyId}`).then(res => res.json());
-    const records = results.response;
-    this.setState({ selectedMinibusRecords: records });
   }
 
   renderBusStops = (busStops) => {
@@ -271,11 +236,6 @@ class Dashboard extends Component {
     return minibuses
   }
 
-  selectMinibus = (minibus) => {
-    this.setState({ selectedMinibusLicense: minibus.license });
-    this.getRecord(minibus.currentState.journeyId);
-  }
-
   componentWillUnmount() {
     clearInterval(this.interval);
   }
@@ -336,7 +296,7 @@ class Dashboard extends Component {
               <div className='info-container'>
                 <div className='minibus-cards-container'>
                   <Typography color="textSecondary">
-                    {`車站總數：${busStops.length}`}
+                    {`Bus Stop Number：${busStops.length}`}
                   </Typography>
 
                   {this.renderBusStopsCard(busStops)}
