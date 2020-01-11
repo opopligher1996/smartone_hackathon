@@ -95,7 +95,7 @@ class BusStopDetail extends Component {
               </div>
 
               <div>
-                Number of Frequent Travelers / Non-Frequent Travelers
+                Service Performance (Predict / Actual)
                 <BiaxialLineChart
                   selectedBusStop = {selectedBusStop}
                 />
