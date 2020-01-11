@@ -27,9 +27,29 @@ class Login extends Component {
     console.log('id')
     console.log(id)
     const isValidAccount = this.props.isValidAccount(id, password)
-    isValidAccount?this.props.history.push('/dashboard'):this.setState({errorMessage:'密碼錯誤'})
+    this.props.history.push('/dashboard')
   }
 
+  renderServicePerformance = () => {
+    const data = [
+      {name: '8:00 - 9:00', percentage: 80},
+      {name: '9:00 - 10:00', percentage: 70},
+      {name: '10:00 - 11:00', percentage: 50},
+      {name: '11:00 - 12:00', percentage: 56}
+    ];
+    return  (
+      <BarChart width={1500} height={200} data={data}
+            margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+         <CartesianGrid strokeDasharray="3 3"/>
+         <XAxis dataKey="name"/>
+         <YAxis/>
+         <Tooltip/>
+         <Legend />
+         <Bar dataKey="percentage" fill="#82ca9d" />
+      </BarChart>
+    );
+  }
+  
   render() {
     return (
       <div className="login">
