@@ -24,8 +24,6 @@ class BusStopDetail extends Component {
 
   componentDidMount() {
     const selectedBusStop = this.props.selectedBusStop;
-    console.log('selectedBusStop')
-    console.log(selectedBusStop)
     this.setState({selectedBusStop: selectedBusStop})
   }
 

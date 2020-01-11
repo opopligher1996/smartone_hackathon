@@ -185,8 +185,8 @@ class Dashboard extends Component {
             'id':2,
             'name':'清水灣龍窩村',
             'temperature':29,
-            'peopleNumber':10,
-            'frequentTravelers':20,
+            'peopleNumber':20,
+            'frequentTravelers':10,
             'fullLevel':1,
             'location':{
               'lat':22.333301,
@@ -237,8 +237,8 @@ class Dashboard extends Component {
             'id':3,
             'name':'白石窩',
             'temperature':32,
-            'peopleNumber':5,
-            'frequentTravelers':10,
+            'peopleNumber':10,
+            'frequentTravelers':5,
             'fullLevel':1,
             'location':{
               'lat':22.335955,
@@ -289,8 +289,8 @@ class Dashboard extends Component {
             'id':4,
             'name':'香港科技大學(南)',
             'temperature':30,
-            'peopleNumber':40,
-            'frequentTravelers':45,
+            'peopleNumber':45,
+            'frequentTravelers':40,
             'fullLevel':3,
             'location':{
               'lat':22.333376,
@@ -482,7 +482,7 @@ class Dashboard extends Component {
                 scaledSize: new google.maps.Size(48, 48)
               }}
         >
-          <div>{name} {peopleNumber}</div>
+          <div>{name}  ({peopleNumber} people)</div>
         </MarkerWithLabel>
       )
     }
@@ -496,13 +496,14 @@ class Dashboard extends Component {
             animation={2}
             labelAnchor={new google.maps.Point(48, 56)}
             labelStyle={{ opacity: 1, background: 'white', padding: "8px" }}
+            onClick={() => this.selectBusStop(busStop)}
             icon={{
                   url: BusStopIcon,
                   anchor: new google.maps.Point(24, 24),
                   scaledSize: new google.maps.Size(48, 48)
                 }}
           >
-            <div>{name} - {peopleNumber}</div>
+            <div>{name}  ({peopleNumber} people)</div>
           </MarkerWithLabel>
         )
       })
