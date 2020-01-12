@@ -40,10 +40,10 @@ class BiaxialBarChart extends PureComponent {
         selectedBusStop: selectedBusStop,
         data : [
           {
-            name: now.add(1, "hours").format("HH:00"), Actual: waitingPassengersCount[0].actualPeopleCount, Predict: waitingPassengersCount[0].predictPeopleCount, amt: 2400,
+            name: `${now.add(1, "hours").format("HH:00")}`, Actual: waitingPassengersCount[0].actualPeopleCount, Predict: waitingPassengersCount[0].predictPeopleCount, amt: 2400,
           },
           {
-            name: now.add(1, "hours").format("HH:00"), Actual: waitingPassengersCount[1].actualPeopleCount, Predict: waitingPassengersCount[1].predictPeopleCount, amt: 2210,
+            name: `${now.add(1, "hours").format("HH:00")}`, Actual: waitingPassengersCount[1].actualPeopleCount, Predict: waitingPassengersCount[1].predictPeopleCount, amt: 2210,
           },
           {
             name: now.add(1, "hours").format("HH:00"), Actual: waitingPassengersCount[2].actualPeopleCount, Predict: waitingPassengersCount[2].predictPeopleCount, amt: 2290,

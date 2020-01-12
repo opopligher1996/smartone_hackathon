@@ -86,14 +86,14 @@ class BusStopDetail extends Component {
               </div>
 
               <div>
-                Number of Waiting Passengers (Predict / Actual)
+                Number of queueing passengers
                 <BiaxialBarChart
                   selectedBusStop = {selectedBusStop}
                 />
               </div>
 
               <div>
-                Service Performance (Predict / Actual)
+                Duration of queueing
                 <BiaxialLineChart
                   selectedBusStop = {selectedBusStop}
                 />
